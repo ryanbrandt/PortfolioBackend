@@ -1,0 +1,33 @@
+{
+  "name": "portfolio-backend",
+  "version": "1.0.0",
+  "description": "RESTful backend for my portfolio page",
+  "main": "index.js",
+  "scripts": {
+    "start-dev": "nodemon --exec babel-node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "pg": "^7.12.1",
+    "pg-hstore": "^2.3.3",
+    "prettier": "^1.18.2",
+    "sequelize": "^5.19.8",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.4"
+  }
+}

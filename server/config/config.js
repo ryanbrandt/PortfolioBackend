@@ -1,0 +1,32 @@
+module.exports = {
+  development: {
+    username: process.env.PORTFOLIO_DB_USER,
+    password: process.env.PORTFOLIO_DB_SECRET,
+    database: process.env.PORTFOLIO_DB,
+    host: process.env.PORTFOLIO_DB_HOST,
+    port: 5432,
+    ssl: true,
+    dialect: "postgres",
+    operatorsAliases: false,
+  },
+  test: {
+    username: process.env.PORTFOLIO_DB_USER,
+    password: process.env.PORTFOLIO_DB_SECRET,
+    database: process.env.PORTFOLIO_DB,
+    host: process.env.PORTFOLIO_DB_HOST,
+    port: 5432,
+    ssl: true,
+    dialect: "postgres",
+    operatorsAliases: false,
+  },
+  production: {
+    username: process.env.PORTFOLIO_DB_USER,
+    password: process.env.PORTFOLIO_DB_SECRET,
+    database: process.env.PORTFOLIO_DB,
+    host: process.env.PORTFOLIO_DB_HOST,
+    port: 5432,
+    ssl: true,
+    dialect: "postgres",
+    operatorsAliases: false,
+  },
+};
