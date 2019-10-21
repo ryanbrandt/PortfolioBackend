@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
           msg: "Must name project",
         },
       },
-      description: {
-        type: DataTypes.STRING,
+      content: {
+        type: DataTypes.JSON,
         allowNull: {
           args: false,
           msg: "Must have project description",

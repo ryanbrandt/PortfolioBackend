@@ -12,6 +12,7 @@ import {
  */
 export function handleErr(err, requestType, res) {
   // TODO
+  console.log(err);
   res.status(500).send({
     message: "fuck you client i guess",
     err,

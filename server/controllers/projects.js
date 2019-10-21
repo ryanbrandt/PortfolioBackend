@@ -7,11 +7,11 @@ const { Project } = model;
 
 class Projects {
   static create(req, res) {
-    const { name, description, link, monthYear } = req.body;
+    const { name, content, link, monthYear } = req.body;
 
     return Project.create({
       name,
-      description,
+      content,
       link,
       month_year: monthYear,
     })
@@ -36,11 +36,11 @@ class Projects {
   }
 
   static update(req, res) {
-    const { id, name, description, link, monthYear } = req.body;
+    const { id, name, content, link, monthYear } = req.body;
 
     const updateData = {
       name,
-      description,
+      content,
       link,
       month_year: monthYear,
     };
