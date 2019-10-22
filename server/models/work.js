@@ -3,21 +3,27 @@ module.exports = (sequelize, DataTypes) => {
   const Work = sequelize.define(
     "Work",
     {
-      company: {
+      name: {
         type: DataTypes.STRING,
         allowNull: {
           args: false,
           msg: "Must have company name",
         },
       },
-      description: {
-        type: DataTypes.STRING,
+      content: {
+        type: DataTypes.JSON,
         allowNull: {
           args: false,
-          msg: "Must have work description",
+          msg: "Must have company details",
         },
       },
-      achievments: {
+      icons: {
+        type: DataTypes.STRING,
+        allowNull: {
+          args: true,
+        },
+      },
+      tags: {
         type: DataTypes.STRING,
         allowNull: {
           args: true,

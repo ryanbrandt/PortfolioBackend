@@ -7,13 +7,14 @@ const { Work } = model;
 
 class Works {
   static create(req, res) {
-    const { company, description, achievments, monthYear } = req.body;
+    const { name, content, month_year, icons, tags } = req.body;
 
     return Work.create({
-      company,
-      description,
-      achievments,
-      month_year: monthYear,
+      name,
+      content,
+      month_year,
+      icons,
+      tags,
     })
       .then(workData =>
         res.status(201).send({
@@ -36,13 +37,14 @@ class Works {
   }
 
   static update(req, res) {
-    const { id, company, description, achievments, monthYear } = req.body;
+    const { name, content, month_year, icons, tags, id } = req.body;
 
     const updateData = {
-      company,
-      description,
-      achievments,
-      month_year: monthYear,
+      name,
+      content,
+      month_year,
+      icons,
+      tags,
     };
 
     return Work.findByPk(id).then(work =>
@@ -51,7 +53,7 @@ class Works {
   }
 
   static delete(req, res) {
-    const { id } = req.body;
+    const { id } = req.query;
 
     return Work.findByPk(id).then(work => postFind(work, request.DELETE, res));
   }

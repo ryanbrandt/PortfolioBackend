@@ -15,14 +15,19 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.JSON,
         allowNull: {
           args: false,
-          msg: "Must have project description",
+          msg: "Must have project details",
         },
       },
-      link: {
+      icons: {
         type: DataTypes.STRING,
         allowNull: {
-          args: false,
-          msg: "Must have project link",
+          args: true,
+        },
+      },
+      tags: {
+        type: DataTypes.STRING,
+        allowNull: {
+          args: true,
         },
       },
       month_year: {
