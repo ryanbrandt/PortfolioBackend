@@ -1,7 +1,13 @@
+import Auth from "../controllers/auth";
 import Projects from "../controllers/projects";
 import Works from "../controllers/works";
 
 export default app => {
+  /**
+   * Auth routes
+   */
+  app.post("/auth", Auth.authorize);
+
   /**
    * Project routes
    */
