@@ -6,8 +6,8 @@ import cors from "cors";
 
 import routes from "./server/routes";
 
-const hostname = "127.0.0.1";
-const port = 8080;
+const hostname = "0.0.0.0";
+const port = process.env.PORT || 80;
 const app = express(); // setup express application
 const server = http.createServer(app);
 
