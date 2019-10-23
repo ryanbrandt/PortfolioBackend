@@ -1,6 +1,7 @@
 import Auth from "../controllers/auth";
 import Projects from "../controllers/projects";
 import Works from "../controllers/works";
+import Contact from "../controllers/contact/contact";
 
 export default app => {
   /**
@@ -23,4 +24,9 @@ export default app => {
   app.put("/work", Works.update);
   app.get("/work", Works.list);
   app.delete("/work", Works.delete);
+
+  /**
+   * Contact
+   */
+  app.post("/contact", Contact.sendMail);
 };
