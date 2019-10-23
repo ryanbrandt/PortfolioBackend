@@ -1,5 +1,6 @@
 import Email from "email-templates";
 
+import transporter from "./transporter";
 import * as request from "../../helpers/constants";
 import { handleErr } from "../../helpers";
 
@@ -11,9 +12,7 @@ class Contact {
       message: {
         from: "ryan.brandt1996@gmail.com",
       },
-      transport: {
-        jsonTransport: true,
-      },
+      transport: transporter,
     });
 
     emailInstance
