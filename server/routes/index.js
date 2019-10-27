@@ -2,6 +2,7 @@ import Auth from "../controllers/auth";
 import Projects from "../controllers/projects";
 import Works from "../controllers/works";
 import Contact from "../controllers/contact/contact";
+import Blogs from "../controllers/blogs";
 
 export default app => {
   /**
@@ -29,4 +30,12 @@ export default app => {
    * Contact
    */
   app.post("/contact", Contact.sendMail);
+
+  /**
+   * Blog routes
+   */
+  app.post("/blogs", Blogs.create);
+  app.put("/blogs", Blogs.update);
+  app.get("/blogs", Blogs.list);
+  app.delete("/blogs", Blogs.delete);
 };
