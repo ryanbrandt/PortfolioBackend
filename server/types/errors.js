@@ -1,22 +1,13 @@
-/**
- * Custom DB errors
- */
+// not sure why i thought custom errors were necessary but here we are
+
 export class InstanceNotFoundError {
   constructor() {
     this.message = "Requested instance not found";
   }
 }
 
-/**
- * Custom API errors
- */
-class ApiError {
-  // lol
-}
-
-export class MethodNotSupportedError extends ApiError {
+export class MethodNotSupportedError {
   constructor() {
-    super();
     this.message = "Http method not supported for requested endpoint";
   }
 }
