@@ -12,6 +12,8 @@ const app = express(); // setup express application
 const server = http.createServer(app);
 
 app.use(cors());
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(bodyParser.urlencoded({ extended: true, limit: "10mb" }));
 app.use(logger("dev")); // log requests to the console
 
 // Parse incoming requests data

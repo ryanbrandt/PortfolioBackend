@@ -37,6 +37,25 @@ module.exports = (sequelize, DataTypes) => {
           msg: "Must describe project completion dates",
         },
       },
+      link: {
+        type: DataTypes.STRING,
+        allowNull: {
+          args: true,
+        },
+      },
+      image: {
+        type: DataTypes.BLOB,
+        allowNull: {
+          args: true,
+        },
+        get() {
+          const img = this.getDataValue("image");
+          if (img != null) {
+            return img.toString("utf8");
+          }
+          return null;
+        },
+      },
     },
     {}
   );
