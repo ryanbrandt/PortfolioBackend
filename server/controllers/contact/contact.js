@@ -9,9 +9,11 @@ class Contact {
     const { name, email, content } = req.body;
 
     const emailInstance = new Email({
+      views: { root: "server/controllers/contact/emails" },
       message: {
-        from: "ryan.brandt1996@gmail.com",
+        from: process.env.EMAIL,
       },
+      send: true,
       transport: transporter,
     });
 
@@ -19,7 +21,7 @@ class Contact {
       .send({
         template: "generic",
         message: {
-          to: "ryan.brandt1996@gmail.com",
+          to: process.env.EMAIL,
         },
         locals: {
           name,
@@ -27,7 +29,7 @@ class Contact {
           content,
         },
       })
-      .then(res.status(200).send())
+      .then(() => res.send(200))
       .catch(err => handleErr(err, request.POST, res));
   }
 }
