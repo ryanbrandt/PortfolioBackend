@@ -7,7 +7,7 @@ const { Project } = model;
 
 class Projects {
   static create(req, res) {
-    const { name, content, month_year, icons, tags } = req.body;
+    const { name, content, month_year, icons, tags, image, link } = req.body;
 
     return Project.create({
       name,
@@ -15,6 +15,8 @@ class Projects {
       icons,
       tags,
       month_year,
+      image,
+      link,
     })
       .then(projectData =>
         res.status(201).send({
@@ -37,7 +39,16 @@ class Projects {
   }
 
   static update(req, res) {
-    const { id, name, content, month_year, icons, tags } = req.body;
+    const {
+      id,
+      name,
+      content,
+      month_year,
+      icons,
+      tags,
+      link,
+      image,
+    } = req.body;
 
     const updateData = {
       name,
@@ -45,6 +56,8 @@ class Projects {
       month_year,
       icons,
       tags,
+      link,
+      image,
     };
 
     return Project.findByPk(id).then(project =>

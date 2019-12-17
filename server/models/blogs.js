@@ -36,6 +36,12 @@ module.exports = (sequelize, DataTypes) => {
           msg: "Must include blog date string",
         },
       },
+      image: {
+        type: DataTypes.BLOB,
+        allowNull: {
+          args: true,
+        },
+      },
     },
     {}
   );
